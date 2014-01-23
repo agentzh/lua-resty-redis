@@ -102,6 +102,11 @@ function _M.set_timeout(self, timeout)
 end
 
 
+function _M.skip_responses(self, bool_skip)
+    _M._skip_responses = bool_skip
+end
+
+
 function _M.connect(self, ...)
     local sock = self.sock
     if not sock then
@@ -143,7 +148,7 @@ end
 
 
 local function _read_reply(sock)
-    local line, err = sock:receive()
+    local line, err = (_M._skip_responses and sock:receive(0) or sock:receive())
     if not line then
         if err == "timeout" then
             sock:close()
