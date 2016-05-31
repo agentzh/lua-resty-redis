@@ -25,11 +25,11 @@ _M._VERSION = '0.24'
 
 
 local commands = {
-    "append",            "auth",              "bgrewriteaof",
-    "bgsave",            "bitcount",          "bitop",
-    "blpop",             "brpop",
-    "brpoplpush",        "client",            "config",
-    "dbsize",
+    "append",            "asking",            "auth",
+    "bgrewriteaof",      "bgsave",            "bitcount",
+    "bitop",             "blpop",             "brpop",
+    "brpoplpush",        "client",            "cluster",
+    "config",            "dbsize",
     "debug",             "decr",              "decrby",
     "del",               "discard",           "dump",
     "echo",
